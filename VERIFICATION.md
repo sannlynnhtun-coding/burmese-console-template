@@ -18,4 +18,5 @@
 - Built the .nupkg with the release download/install README included.
 - Installed that exact package locally, generated a .NET 10 project, and built it successfully.
 - Generated application's inline input / protected prompt / Backspace / zoom / Console.ReadLine echo self-test: PASS.
-- Release includes the .nupkg and its SHA-256 checksum file.
+- Release includes the .nupkg; its SHA-256 checksum is provided in the release notes.
+

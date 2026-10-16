@@ -55,8 +55,7 @@ dotnet new uninstall SLH.BurmeseConsole.Templates
 dotnet new install .\SLH.BurmeseConsole.Templates.1.2.3.nupkg
 ```
 
-No NuGet feed setup, Git clone, or source build is needed. A SHA-256 checksum file
-is included in the release assets for checking the downloaded package.
+No NuGet feed setup, Git clone, or source build is needed. The release notes include the SHA-256 checksum for checking the downloaded package.
 
 ## Command line
 
@@ -131,4 +130,5 @@ See `templates/BurmeseConsole/THIRD-PARTY-NOTICES.txt` for icon/dependency prove
 
 
 Uninstall at any time: `dotnet new uninstall SLH.BurmeseConsole.Templates`.
+
 
