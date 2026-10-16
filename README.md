@@ -13,11 +13,13 @@ This is a console-style desktop host, not a dependency-free terminal application
 Requires the .NET 10 SDK to build the template package. On Windows:
 
 ```powershell
+git clone https://github.com/sannlynnhtun-coding/burmese-console-template.git
+cd burmese-console-template
 .\scripts\Install.ps1
 ```
 
 The script builds the local NuGet template package, replaces an older installation
-of this template, and installs it. Nothing is published to NuGet or GitHub.
+of this template, and installs it. The install script does not publish packages or push changes.
 
 1. Open Visual Studio → **Create a new project**.
 2. Search **Burmese Console App (Pyidaungsu)**.
@@ -95,3 +97,4 @@ Viewer project သီးခြားရွေးစရာ မလိုပါဘ�
 - `scripts/`: local build, install and uninstall commands.
 
 See `templates/BurmeseConsole/THIRD-PARTY-NOTICES.txt` for icon/dependency provenance.
+
