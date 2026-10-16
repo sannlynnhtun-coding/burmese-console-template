@@ -12,3 +12,10 @@
 - GitHub repository: https://github.com/sannlynnhtun-coding/burmese-console-template (public).
 
 
+
+## GitHub Release v1.2.3
+
+- Built the .nupkg with the release download/install README included.
+- Installed that exact package locally, generated a .NET 10 project, and built it successfully.
+- Generated application's inline input / protected prompt / Backspace / zoom / Console.ReadLine echo self-test: PASS.
+- Release includes the .nupkg and its SHA-256 checksum file.

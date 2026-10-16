@@ -8,27 +8,55 @@ on the current prompt line. The same assembly runs the user's normal
 `Console.WriteLine` / `Console.ReadLine` code through UTF-8 pipes.
 This is a console-style desktop host, not a dependency-free terminal application.
 
-## Install for Visual Studio
+## Download and install (no cloning or building)
 
-Requires the .NET 10 SDK to build the template package. On Windows:
+Install the .NET SDK (recommended: .NET 10), Visual Studio with .NET desktop
+support, and **Pyidaungsu Regular**. The font is not bundled with the template.
+
+1. Open [GitHub Releases](https://github.com/sannlynnhtun-coding/burmese-console-template/releases/latest).
+2. Download **SLH.BurmeseConsole.Templates.1.2.3.nupkg** under Assets (not Source code).
+3. Open a terminal in the download folder and run:
 
 ```powershell
-git clone https://github.com/sannlynnhtun-coding/burmese-console-template.git
-cd burmese-console-template
-.\scripts\Install.ps1
+dotnet new install .\SLH.BurmeseConsole.Templates.1.2.3.nupkg
 ```
 
-The script builds the local NuGet template package, replaces an older installation
-of this template, and installs it. The install script does not publish packages or push changes.
+Or download and install directly in PowerShell:
+
+```powershell
+Invoke-WebRequest -Uri "https://github.com/sannlynnhtun-coding/burmese-console-template/releases/download/v1.2.3/SLH.BurmeseConsole.Templates.1.2.3.nupkg" -OutFile "SLH.BurmeseConsole.Templates.1.2.3.nupkg"
+dotnet new install .\SLH.BurmeseConsole.Templates.1.2.3.nupkg
+```
+
+On Linux/macOS, download the same asset and use:
+
+```sh
+curl -fL -o SLH.BurmeseConsole.Templates.1.2.3.nupkg https://github.com/sannlynnhtun-coding/burmese-console-template/releases/download/v1.2.3/SLH.BurmeseConsole.Templates.1.2.3.nupkg
+dotnet new install ./SLH.BurmeseConsole.Templates.1.2.3.nupkg
+```
+
+### Use in Visual Studio
 
 1. Open Visual Studio → **Create a new project**.
 2. Search **Burmese Console App (Pyidaungsu)**.
 3. Enter your project name and location, then choose **Framework**.
-4. Create the project and press **F5**.
+4. Create the project and press **F5**. There is only one project.
 
 If the template is missing, restart Visual Studio. Framework choices are .NET
 6, 7, 8, 9, 10 and 11 Preview. The SDK/runtime for your chosen framework is required.
 .NET 6/7 are retained for compatibility; .NET 11 requires a preview SDK.
+
+### Replace an earlier installation
+
+Uninstall the previous version before installing the downloaded package:
+
+```powershell
+dotnet new uninstall SLH.BurmeseConsole.Templates
+dotnet new install .\SLH.BurmeseConsole.Templates.1.2.3.nupkg
+```
+
+No NuGet feed setup, Git clone, or source build is needed. A SHA-256 checksum file
+is included in the release assets for checking the downloaded package.
 
 ## Command line
 
@@ -61,11 +89,13 @@ those operating systems have not been verified in this Windows workspace.
 The host supports plain text output and line input. `Console.ReadKey`, ANSI cursor
 positioning and full-screen terminal programs are not supported.
 
-## Build and uninstall
+## Build from source (optional)
 
 ```powershell
-.\scripts\Build.ps1
-.\scripts\Uninstall.ps1
+git clone https://github.com/sannlynnhtun-coding/burmese-console-template.git
+cd burmese-console-template
+.\scripts\Install.ps1
+# Build a package only: .\scripts\Build.ps1
 ```
 
 Package output: `artifacts/packages/SLH.BurmeseConsole.Templates.1.2.3.nupkg`.
@@ -85,7 +115,8 @@ and changes clipboard text; save your clipboard first.
 
 ## မြန်မာလို အသုံးပြုနည်း
 
-`Install.ps1` ကို run ပြီး Visual Studio ရဲ့ Create a new project မှာ
+GitHub Releases မှာ `.nupkg` ကို download လုပ်ပြီး `dotnet new install <ဖိုင်လမ်းကြောင်း>` နဲ့ install လုပ်ပါ။
+Repo clone လုပ်ဖို့၊ build လုပ်ဖို့ မလိုပါဘူး။ Visual Studio ရဲ့ Create a new project မှာ
 **Burmese Console App (Pyidaungsu)** ကို ရှာပါ။ Framework ရွေးပြီး project ဖန်တီးပါ။
 `Program.cs` မှာ code ရေးပြီး F5 နှိပ်ပါ။ Input ကို prompt နောက်မှာပဲ ရိုက်ပါ။
 Viewer project သီးခြားရွေးစရာ မလိုပါဘူး။
@@ -97,4 +128,7 @@ Viewer project သီးခြားရွေးစရာ မလိုပါဘ�
 - `scripts/`: local build, install and uninstall commands.
 
 See `templates/BurmeseConsole/THIRD-PARTY-NOTICES.txt` for icon/dependency provenance.
+
+
+Uninstall at any time: `dotnet new uninstall SLH.BurmeseConsole.Templates`.
 
