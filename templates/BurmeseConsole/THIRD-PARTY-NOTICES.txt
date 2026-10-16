@@ -1,0 +1,6 @@
+Template console icon copied from the installed Microsoft .NET SDK C# Console App template:
+Microsoft.DotNet.Common.ProjectTemplates.10.0, version 10.0.402,
+content/ConsoleApplication-CSharp/.template.config/ide/icon.ico.
+This project is a user-authored template, not a Microsoft product or endorsement.
+Avalonia dependencies retain their own licenses in the corresponding NuGet packages.
+Pyidaungsu is used as an installed system font; its font files are not redistributed.
